@@ -25,3 +25,4 @@ _G.enhance_align = function(key)
 	local map = { ["nga"] = "<Plug>(EasyAlign)", ["xga"] = "<Plug>(EasyAlign)" }
 	return t(map[key])
 end
+

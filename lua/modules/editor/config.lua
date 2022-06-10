@@ -377,4 +377,8 @@ function config.imselect()
 	end
 end
 
+function config.visualMulti()
+
+end
+
 return config

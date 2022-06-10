@@ -139,5 +139,9 @@ editor["brglng/vim-im-select"] = {
 	event = "BufReadPost",
 	config = conf.imselect,
 }
+editor["mg979/vim-visual-multi"] = {
+    opt = true
+    config = conf.visualMulti
+}
 
 return editor
