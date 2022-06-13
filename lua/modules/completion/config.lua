@@ -96,7 +96,7 @@ function config.cmp()
 				vim_item.kind = string.format("%s %s", lspkind_icons[vim_item.kind], vim_item.kind)
 
 				vim_item.menu = ({
-					cmp_tabnine = "[TN]",
+					cmp_tabnine = "[TabNine]",
 					buffer = "[BUF]",
 					orgmode = "[ORG]",
 					nvim_lsp = "[LSP]",
