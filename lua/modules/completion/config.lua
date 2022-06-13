@@ -56,6 +56,7 @@ function config.cmp()
 				cmp.config.compare.exact,
 				cmp.config.compare.score,
 				require("cmp-under-comparator").under,
+        require("cmp_tabnine.compare"),
 				cmp.config.compare.kind,
 				cmp.config.compare.sort_text,
 				cmp.config.compare.length,
@@ -164,7 +165,7 @@ function config.cmp()
 			{ name = "orgmode" },
 			{ name = "buffer" },
 			{ name = "latex_symbols" },
-			{name = 'cmp_tabnine'}
+			{ name = 'cmp_tabnine' }
 		},
 	})
 end
