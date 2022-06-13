@@ -249,7 +249,7 @@ function config.tabnine()
         run_on_every_keystroke = true,
         snippet_placeholder = '..',
         ignored_file_types = {},
-	    shshow_prediction_strength = false,
+	    shshow_prediction_strength = true,
     })
 end
 
