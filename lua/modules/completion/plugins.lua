@@ -64,5 +64,11 @@ completion["windwp/nvim-autopairs"] = {
 	config = conf.autopairs,
 }
 completion["github/copilot.vim"] = { opt = true, cmd = "Copilot" }
+completion["tzachar/cmp-tabnine"] = {
+    after = "nvim-cmp",
+    config = conf.tabnine,
+    run = "bash install.sh",
+    requires = "hrsh7th/nvim-cmp",
+}
 
 return completion
