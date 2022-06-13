@@ -95,7 +95,7 @@ function config.cmp()
 				vim_item.kind = string.format("%s %s", lspkind_icons[vim_item.kind], vim_item.kind)
 
 				vim_item.menu = ({
-					-- cmp_tabnine = "[TN]",
+					cmp_tabnine = "[TN]",
 					buffer = "[BUF]",
 					orgmode = "[ORG]",
 					nvim_lsp = "[LSP]",
@@ -164,7 +164,7 @@ function config.cmp()
 			{ name = "orgmode" },
 			{ name = "buffer" },
 			{ name = "latex_symbols" },
-			-- {name = 'cmp_tabnine'}
+			{name = 'cmp_tabnine'}
 		},
 	})
 end
@@ -180,9 +180,21 @@ function config.luasnip()
 	require("luasnip.loaders.from_snipmate").lazy_load()
 end
 
+function config.tabnine()
+    local tabnine = require('cmp_tabnine.config')
+    tabnine:setup({max_line = 1000, max_num_results = 20, sort = true})
+end
+
 -- function config.tabnine()
---     local tabnine = require('cmp_tabnine.config')
---     tabnine:setup({max_line = 1000, max_num_results = 20, sort = true})
+--   require('cmp_tabnine.config').setup({
+--       max_lines = 1000,
+--       max_num_results = 20,
+--       sort = true,
+--       run_on_every_keystroke = true,
+--       snippet_placeholder = '..',
+--       ignored_file_types = {},
+--     shshow_prediction_strength = true,
+--   })
 -- end
 
 function config.autopairs()
@@ -239,18 +251,6 @@ function config.bqf()
 			},
 		},
 	})
-end
-
-function config.tabnine()
-    require('cmp_tabnine.config').setup({
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = '..',
-        ignored_file_types = {},
-	    shshow_prediction_strength = true,
-    })
 end
 
 return config

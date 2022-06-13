@@ -37,7 +37,7 @@ completion["hrsh7th/nvim-cmp"] = {
 	config = conf.cmp,
 	event = "InsertEnter",
 	requires = {
-		{ "lukas-reineke/cmp-under-comparator" },
+        { "lukas-reineke/cmp-under-comparator" },
 		{ "saadparwaiz1/cmp_luasnip", after = "LuaSnip" },
 		{ "hrsh7th/cmp-nvim-lsp", after = "cmp_luasnip" },
 		{ "hrsh7th/cmp-nvim-lua", after = "cmp-nvim-lsp" },
@@ -46,12 +46,12 @@ completion["hrsh7th/nvim-cmp"] = {
 		{ "f3fora/cmp-spell", after = "cmp-path" },
 		{ "hrsh7th/cmp-buffer", after = "cmp-spell" },
 		{ "kdheepak/cmp-latex-symbols", after = "cmp-buffer" },
-		-- {
-		--     'tzachar/cmp-tabnine',
-		--     run = './install.sh',
-		--     after = 'cmp-spell',
-		--     config = conf.tabnine
-		-- }
+		{
+		    'tzachar/cmp-tabnine',
+		    run = './install.sh',
+		    after = 'cmp-spell',
+		    config = conf.tabnine
+		},
 	},
 }
 completion["L3MON4D3/LuaSnip"] = {
@@ -64,11 +64,11 @@ completion["windwp/nvim-autopairs"] = {
 	config = conf.autopairs,
 }
 completion["github/copilot.vim"] = { opt = true, cmd = "Copilot" }
-completion["tzachar/cmp-tabnine"] = {
-    after = "nvim-cmp",
-    config = conf.tabnine,
-    run = "bash install.sh",
-    requires = "hrsh7th/nvim-cmp",
-}
+-- completion["tzachar/cmp-tabnine"] = {
+--     after = "nvim-cmp",
+--     config = conf.tabnine,
+--     run = "./install.sh",
+--     requires = "hrsh7th/nvim-cmp",
+-- }
 
 return completion
