@@ -248,11 +248,11 @@ function config.tabnine()
         sort = true,
         run_on_every_keystroke = true,
         snippet_placeholder = '..',
-	    ignored_file_types = { -- default is not to ignore
-		    -- uncomment to ignore in lua:
-		    -- lua = true
-	    },
-	    show_prediction_strength = false,
+        ignored_file_types = { -- default is not to ignore
+		    -- u-- uncomment to ignore in lua:
+		    -- l-- lua = true
+	    } },
+	    shshow_prediction_strength = false,
     })
 end
 
