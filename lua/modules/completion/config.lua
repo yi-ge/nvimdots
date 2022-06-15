@@ -13,6 +13,7 @@ function config.aerial()
 end
 
 function config.cmp()
+	vim.cmd([[packadd cmp-tabnine]])
 	local t = function(str)
 		return vim.api.nvim_replace_termcodes(str, true, true, true)
 	end
@@ -40,6 +41,8 @@ function config.cmp()
 		return false
 	end
 
+	local compare = require("cmp.config.compare")
+
 	local cmp = require("cmp")
 	cmp.setup({
 		window = {
@@ -52,15 +55,15 @@ function config.cmp()
 		},
 		sorting = {
 			comparators = {
-				cmp.config.compare.offset,
-				cmp.config.compare.exact,
-				cmp.config.compare.score,
+				-- require("cmp_tabnine.compare"),
+				compare.offset,
+				compare.exact,
+				compare.score,
 				require("cmp-under-comparator").under,
-        require("cmp_tabnine.compare"),
-				cmp.config.compare.kind,
-				cmp.config.compare.sort_text,
-				cmp.config.compare.length,
-				cmp.config.compare.order,
+				compare.kind,
+				compare.sort_text,
+				compare.length,
+				compare.order,
 			},
 		},
 		formatting = {
@@ -182,21 +185,9 @@ function config.luasnip()
 end
 
 function config.tabnine()
-    local tabnine = require('cmp_tabnine.config')
-    tabnine:setup({max_line = 1000, max_num_results = 20, sort = true})
+	local tabnine = require("cmp_tabnine.config")
+	tabnine:setup({ max_line = 1000, max_num_results = 20, sort = true })
 end
-
--- function config.tabnine()
---   require('cmp_tabnine.config').setup({
---       max_lines = 1000,
---       max_num_results = 20,
---       sort = true,
---       run_on_every_keystroke = true,
---       snippet_placeholder = '..',
---       ignored_file_types = {},
---     shshow_prediction_strength = true,
---   })
--- end
 
 function config.autopairs()
 	require("nvim-autopairs").setup({})
