@@ -244,7 +244,7 @@ local shfmt = require("efmls-configs.formatters.shfmt")
 
 -- Add your own config for formatter and linter here
 
--- local rustfmt = require("modules.completion.efm.formatters.rustfmt")
+local rustfmt = require("modules.completion.efm.formatters.rustfmt")
 
 -- Override default config here
 
@@ -275,7 +275,7 @@ efmls.setup({
 	scss = { formatter = prettier },
 	sh = { formatter = shfmt, linter = shellcheck },
 	markdown = { formatter = prettier },
-	-- rust = {formatter = rustfmt},
+	rust = { formatter = rustfmt },
 })
 
 formatting.configure_format_on_save()
